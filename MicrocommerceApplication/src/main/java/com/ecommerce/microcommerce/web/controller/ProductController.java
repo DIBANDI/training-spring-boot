@@ -125,5 +125,11 @@ public class ProductController {
     }
 
 
+    //Liste des produits
+    @RequestMapping(value = "/TousProduits", method = RequestMethod.GET)
+    public  List<Product> tousProduits(){
+        List<Product> mesproduits= productDao.findAll();
+        return mesproduits;
+    }
 
 }
