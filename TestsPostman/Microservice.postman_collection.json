@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "c5359672-061f-420f-8725-671bb76e2f9a",
+		"name": "Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:9090//TousProduits",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090//TousProduits",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"",
+						"TousProduits"
+					]
+				},
+				"description": "La liste des produits"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090//Produits/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090//Produits/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"",
+						"Produits",
+						"1"
+					]
+				},
+				"description": "Affichage d'un produit par son id"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090//Produits",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 5,\n    \"nom\": \"ECran plat\",\n    \"prix\": 900,\n    \"prixAchat\": 700\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090//Produits",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"",
+						"Produits"
+					]
+				},
+				"description": "Creation du produits"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090//Produits",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 5,\n    \"nom\": \"ECran plat\",\n    \"prix\": 0,\n    \"prixAchat\": 700\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090//Produits",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"",
+						"Produits"
+					]
+				},
+				"description": "Tester d'enregistrement du produit avec un prix de vente egal à 0"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090//Produits/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090//Produits/1",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"",
+						"Produits",
+						"1"
+					]
+				},
+				"description": "Suppression d'un produit "
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090//Produits",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 2,\n    \"nom\": \"ECran plat\",\n    \"prix\": 333,\n    \"prixAchat\": 222\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9090//Produits",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"",
+						"Produits"
+					]
+				},
+				"description": "Modification du produit "
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/test/produits/400",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/test/produits/400",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"test",
+						"produits",
+						"400"
+					]
+				},
+				"description": "Test de produit ayant un prix egal à 400"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/Tri",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/Tri",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Tri"
+					]
+				},
+				"description": "Tri des produits par ordre alphabetique"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
