@@ -12,6 +12,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Role;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.json.MappingJacksonValue;
 import org.springframework.web.bind.annotation.*;
@@ -85,7 +86,7 @@ public class ProductController {
             @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
             @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
     })
-    @RequestMapping(value = "/Produits/ajouter", method = RequestMethod.POST, produces = "application/json")
+    @PostMapping(value = "/Produits/ajouter")
     public ResponseEntity<Void> ajouterProduit(@Valid @RequestBody Product product) {
 
         if(product.getPrix()>0)
@@ -117,7 +118,7 @@ public class ProductController {
             @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
             @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
     })
-    @RequestMapping(value="/Produits/supprimer/{id}", method = RequestMethod.DELETE, produces = "application/json")
+    @DeleteMapping(value="/Produits/supprimer/{id}")
     public void supprimerProduit(@PathVariable int id) {
         productDao.delete(id);
     }
@@ -130,7 +131,7 @@ public class ProductController {
             @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
             @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
     })
-    @RequestMapping(value = "/Produits/modifier", method = RequestMethod.PUT, produces = "application/json")
+    @PutMapping(value = "/Produits/modifier")
     public void updateProduit(@RequestBody Product product) {
         productDao.save(product);
     }
@@ -145,7 +146,7 @@ public class ProductController {
             @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
             @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
     })
-    @RequestMapping(value="/Produits/test/{prix}", method = RequestMethod.GET, produces = "application/json")
+    @GetMapping(value="/Produits/test/{prix}")
     public List<Product>  testeDeRequetes(@PathVariable int prix) {
         return productDao.chercherUnProduitCher(400);
     }
@@ -159,7 +160,7 @@ public class ProductController {
             @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
             @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
     })
-    @RequestMapping(value="/Produits/AdminProduits", method = RequestMethod.GET, produces = "application/json")
+    @GetMapping(value="/Produits/AdminProduits")
     public Map<String, String> calculerMargeProduit(){
         Map<String, String> pproduits = new HashMap<String, String>();
         for (Product product: productDao.findAll()){
@@ -177,7 +178,7 @@ public class ProductController {
             @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
             @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
     })
-    @RequestMapping(value="/Produits/tri", method = RequestMethod.GET, produces = "application/json")
+    @GetMapping(value="/Produits/tri")
     public  List<Product> trieProduitsParOrdreAlphabetique(){
         List<Product> mesproduits= productDao.findAllByOrderByNomAsc();
         return mesproduits;
@@ -192,7 +193,7 @@ public class ProductController {
             @ApiResponse(code = 403, message = "Accessing the resource you were trying to reach is forbidden"),
             @ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
     })
-    @RequestMapping(value = "/Produits/tousproduits", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/Produits/tousproduits", method = RequestMethod.GET)
     public  List<Product> tousProduits(){
         List<Product> mesproduits= productDao.findAll();
         return mesproduits;

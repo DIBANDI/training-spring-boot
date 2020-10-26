@@ -1,7 +1,8 @@
-E:\PROJETS_SPRING\training-spring-boot\src\main\java\com\ecommerce\microcommerce\web\exceptions\ProduitIntrouvableException.java
-E:\PROJETS_SPRING\training-spring-boot\src\main\java\com\ecommerce\microcommerce\dao\ProductDao.java
-E:\PROJETS_SPRING\training-spring-boot\src\main\java\com\ecommerce\microcommerce\model\Product.java
-E:\PROJETS_SPRING\training-spring-boot\src\main\java\com\ecommerce\microcommerce\configuration\SwaggerConfig.java
-E:\PROJETS_SPRING\training-spring-boot\src\main\java\com\ecommerce\microcommerce\web\controller\ProductController.java
-E:\PROJETS_SPRING\training-spring-boot\src\main\java\com\ecommerce\microcommerce\web\exceptions\ProduitGratuitException.java
-E:\PROJETS_SPRING\training-spring-boot\src\main\java\com\ecommerce\microcommerce\MicrocommerceApplication.java
+E:\PROJETS_SPRING\training-spring-boot\MicrocommerceApplication\src\main\java\com\ecommerce\microcommerce\configuration\ProductSecurityConfig.java
+E:\PROJETS_SPRING\training-spring-boot\MicrocommerceApplication\src\main\java\com\ecommerce\microcommerce\web\exceptions\ProduitIntrouvableException.java
+E:\PROJETS_SPRING\training-spring-boot\MicrocommerceApplication\src\main\java\com\ecommerce\microcommerce\web\controller\ProductController.java
+E:\PROJETS_SPRING\training-spring-boot\MicrocommerceApplication\src\main\java\com\ecommerce\microcommerce\model\Product.java
+E:\PROJETS_SPRING\training-spring-boot\MicrocommerceApplication\src\main\java\com\ecommerce\microcommerce\configuration\SwaggerConfig.java
+E:\PROJETS_SPRING\training-spring-boot\MicrocommerceApplication\src\main\java\com\ecommerce\microcommerce\MicrocommerceApplication.java
+E:\PROJETS_SPRING\training-spring-boot\MicrocommerceApplication\src\main\java\com\ecommerce\microcommerce\dao\ProductDao.java
+E:\PROJETS_SPRING\training-spring-boot\MicrocommerceApplication\src\main\java\com\ecommerce\microcommerce\web\exceptions\ProduitGratuitException.java

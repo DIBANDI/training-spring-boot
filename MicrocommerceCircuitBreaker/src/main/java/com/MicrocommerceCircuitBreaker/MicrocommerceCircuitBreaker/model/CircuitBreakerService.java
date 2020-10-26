@@ -33,17 +33,17 @@ public class CircuitBreakerService {
 
         System.out.println("Response Received as " + response + " -  " + new Date());
 
-        return "NORMAL FLOW !!! - School Name -  " + id + " :::  " +
-                " Student Details " + response + " -  " + new Date();
+        return "TOUT SE PASSE BIEN," + id + " :::  " +
+                " Details " + response + " -  " + new Date();
     }
 
  @SuppressWarnings("unused")
     private String callProductServiceAndGetData_Fallback(int id) {
 
-        System.out.println("Student Service is down!!! fallback route enabled...");
+        System.out.println("Product Service is down!!! fallback route enabled...");
 
-        return "CIRCUIT BREAKER ENABLED!!! No Response From Student Service at this moment. " +
-                " Service will be back shortly - " + new Date();
+        return "CIRCUIT BREAKER TEMPORAIREMENT INACCESSIBLE!!! PAS DE REPONSE. " +
+                " LE SERVICE SERA DE RETOUR DANS UN INSTANT  - " + new Date();
     }
 
     //*******************************************************************************/
@@ -51,15 +51,15 @@ public class CircuitBreakerService {
     //*******************************************************************************/
     @HystrixCommand(fallbackMethod = "callListProduct_Fallback")
     public String callListProduct() {
-        URI uri = URI.create("http://localhost:9090/Produits");
+        URI uri = URI.create("http://localhost:9090/Produits/tousproduits");
         return restTemplate.getForObject(uri, String.class);
 
     }
 
     @SuppressWarnings("unused")
     private String callListProduct_Fallback() {
-        System.out.println("Student Service is down!!! fallback route enabled...");
-        return "Mauvais Lien !";
+        System.out.println("Product Service is down!!! fallback route enabled...");
+        return "Lien temporairement inaccessible !";
     }
 
 
@@ -69,15 +69,15 @@ public class CircuitBreakerService {
 
     @HystrixCommand(fallbackMethod = "callTriProduct_Fallback")
     public String callTriProduct() {
-        URI uri = URI.create("http://localhost:9090/Tri");
+        URI uri = URI.create("http://localhost:9090/Produits/tri");
         return restTemplate.getForObject(uri, String.class);
 
     }
 
     @SuppressWarnings("unused")
     private String callTriProduct_Fallback() {
-        System.out.println("Student Service is down!!! fallback route enabled...");
-        return "Mauvais Lien !";
+        System.out.println("Product Service is down!!! fallback route enabled...");
+        return "Lien temporairement inaccessible !";
     }
     //*******************************************************************************/
     //****************End point  Qui renvoie les produits et leurs marges**************/
@@ -85,15 +85,15 @@ public class CircuitBreakerService {
 
     @HystrixCommand(fallbackMethod = "callMargeProduct_Fallback")
     public String callMargeProduct() {
-        URI uri = URI.create("http://localhost:9090/AdminProduits");
+        URI uri = URI.create("http://localhost:9090/Produits/AdminProduits");
         return restTemplate.getForObject(uri, String.class);
 
     }
 
     @SuppressWarnings("unused")
     private String callMargeProduct_Fallback() {
-        System.out.println("Student Service is down!!! fallback route enabled...");
-        return "Mauvais Lien !";
+        System.out.println("Product Service is down!!! fallback route enabled...");
+        return "Lien temporairement inaccessible !";
     }
 
     //*******************************************************************************/
@@ -110,7 +110,7 @@ public class CircuitBreakerService {
     @SuppressWarnings("unused")
     private String callAjouterProduct_Fallback() {
         System.out.println("Product Service is down!!! fallback route enabled...");
-        return "Mauvais Lien !";
+        return "Lien temporairement inaccessible !";
     }
 
     //*******************************************************************************/
@@ -119,7 +119,7 @@ public class CircuitBreakerService {
 
     @HystrixCommand(fallbackMethod = "callUpdateProduct_Fallback")
     public String callUpdateProduct() {
-        URI uri = URI.create("http://localhost:9090/Produits");
+        URI uri = URI.create("http://localhost:9090/Produits/modifier");
         return restTemplate.getForObject(uri, String.class);
 
     }
@@ -127,7 +127,7 @@ public class CircuitBreakerService {
     @SuppressWarnings("unused")
     private String callUpdateProduct_Fallback() {
         System.out.println("Product Service is down!!! fallback route enabled...");
-        return "Mauvais Lien !";
+        return "Lien temporairement inaccessible !";
     }
 
     //*******************************************************************************/
@@ -136,7 +136,7 @@ public class CircuitBreakerService {
 
     @HystrixCommand(fallbackMethod = "callSupprimerProduct_Fallback")
     public String callSupprimerProduct() {
-        URI uri = URI.create("http://localhost:9090/Produits");
+        URI uri = URI.create("http://localhost:9090/Produits/supprimer/{id}");
         return restTemplate.getForObject(uri, String.class);
 
     }
@@ -144,7 +144,7 @@ public class CircuitBreakerService {
     @SuppressWarnings("unused")
     private String callSupprimerProduct_Fallback() {
         System.out.println("Product Service is down!!! fallback route enabled...");
-        return "Mauvais Lien !";
+        return "Lien temporairement inaccessible !";
     }
 
     //*******************************************************************************/
@@ -153,7 +153,7 @@ public class CircuitBreakerService {
 
     @HystrixCommand(fallbackMethod = "callTesProduct_Fallback")
     public String callTestProduct() {
-        URI uri = URI.create("http://localhost:9090/Produits");
+        URI uri = URI.create("http://localhost:9090/Produits/test/{prix}");
         return restTemplate.getForObject(uri, String.class);
 
     }
@@ -161,7 +161,7 @@ public class CircuitBreakerService {
     @SuppressWarnings("unused")
     private String callTestProduct_Fallback() {
         System.out.println("Product Service is down!!! fallback route enabled...");
-        return "Mauvais Lien !";
+        return "Lien temporairement inaccessible !";
     }
 //******************************************************************************************/
     @Bean

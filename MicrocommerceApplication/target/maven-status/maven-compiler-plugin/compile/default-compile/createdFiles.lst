@@ -1,4 +1,5 @@
 com\ecommerce\microcommerce\web\exceptions\ProduitIntrouvableException.class
+com\ecommerce\microcommerce\configuration\ProductSecurityConfig.class
 com\ecommerce\microcommerce\configuration\SwaggerConfig.class
 com\ecommerce\microcommerce\MicrocommerceApplication.class
 com\ecommerce\microcommerce\web\exceptions\ProduitGratuitException.class
